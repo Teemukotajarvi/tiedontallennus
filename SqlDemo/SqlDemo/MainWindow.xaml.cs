@@ -27,7 +27,7 @@ namespace SqlDemo
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
-        {
+        { 
             string connStr = "Server=tcp:teemuko.database.windows.net,1433;"+
                 "Initial Catalog=TestiTietokanta;Persist Security Info=False;User ID=Administratori;"+
                 "Password=Cuccumia123;MultipleActiveResultSets=False;Encrypt=True;"+
