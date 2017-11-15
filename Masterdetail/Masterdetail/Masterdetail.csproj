@@ -267,6 +267,8 @@
     <Content Include="Models\TestitietokantaModel.edmx.diagram">
       <DependentUpon>TestitietokantaModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\MasterdetailPalautettava3 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\MasterdetailPalautettava3 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
