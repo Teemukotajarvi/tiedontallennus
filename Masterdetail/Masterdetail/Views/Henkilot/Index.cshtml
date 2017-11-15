@@ -5,9 +5,12 @@
 @section scripts {
     <script>
         $(function () {
-            $(".DisplayHenkiloDataLink").click(function () {
-                var henkiloid = $(this).data("henkiloid");
-                alert("Klikattiin: " + henkiloid);
+            $(".displayHenkiloDataLink").click(function () {
+                var henkiloId = $(this).data("henkiloid");              
+                var url = "GetOrderData/" + henkiloId;
+                $.getJSON(url, null, function (data) {
+                    alert("kutsu onnistui, data = " + data.html);
+                });
             });
          });
     </script>  
@@ -28,7 +31,7 @@
         @foreach (Masterdetail.Models.Henkilot henk in Model)
         {
         <tr>
-            <td><a href="#" class="DisplayHenkiloDataLink" data-henkiloid="@henk.Henkilo_id"><span class="glyphicon glyphicon-plus-sign"></span></a>@henk.Henkilo_id</td>
+            <td><a href="#" class="displayHenkiloDataLink" data-henkiloid="@henk.Henkilo_id"><span class="glyphicon glyphicon-plus-sign"></span></a>@henk.Henkilo_id</td>
             <td>@henk.Etunimi</td>
             <td>@henk.Sukunimi</td>
             <td>@henk.Osoite</td>
