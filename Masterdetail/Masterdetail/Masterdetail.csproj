@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0EDD5F00-49F5-4691-B3F6-249916220E3A}</ProjectGuid>
+    <ProjectGuid>{39737773-5D31-4E30-BB63-22C57217E2CC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestiTietokantaWebApp</RootNamespace>
-    <AssemblyName>TestiTietokantaWebApp</AssemblyName>
+    <RootNamespace>Masterdetail</RootNamespace>
+    <AssemblyName>Masterdetail</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -25,7 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ApplicationInsightsResourceId>/subscriptions/af9c37b6-2d1b-4cef-9eb7-bbf0b4f1624a/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/TestiTietokantaWebApp</ApplicationInsightsResourceId>
+    <ApplicationInsightsResourceId>/subscriptions/af9c37b6-2d1b-4cef-9eb7-bbf0b4f1624a/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Masterdetail</ApplicationInsightsResourceId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -199,8 +199,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HenkiloController.cs" />
-    <Compile Include="Controllers\HenkilotiedotjaTunnitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -208,30 +206,30 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Henkilot.cs">
-      <DependentUpon>TestiTietokantaModel.tt</DependentUpon>
+      <DependentUpon>TestitietokantaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Projektit.cs">
-      <DependentUpon>TestiTietokantaModel.tt</DependentUpon>
+      <DependentUpon>TestitietokantaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestiTietokantaModel.Context.cs">
+    <Compile Include="Models\TestitietokantaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestiTietokantaModel.Context.tt</DependentUpon>
+      <DependentUpon>TestitietokantaModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestiTietokantaModel.cs">
+    <Compile Include="Models\TestitietokantaModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestiTietokantaModel.tt</DependentUpon>
+      <DependentUpon>TestitietokantaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestiTietokantaModel.Designer.cs">
+    <Compile Include="Models\TestitietokantaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TestiTietokantaModel.edmx</DependentUpon>
+      <DependentUpon>TestitietokantaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Tunnit.cs">
-      <DependentUpon>TestiTietokantaModel.tt</DependentUpon>
+      <DependentUpon>TestitietokantaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -243,15 +241,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\TestiTietokantaModel.Context.tt">
+    <Content Include="Models\TestitietokantaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TestiTietokantaModel.edmx</DependentUpon>
-      <LastGenOutput>TestiTietokantaModel.Context.cs</LastGenOutput>
+      <DependentUpon>TestitietokantaModel.edmx</DependentUpon>
+      <LastGenOutput>TestitietokantaModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TestiTietokantaModel.tt">
+    <Content Include="Models\TestitietokantaModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TestiTietokantaModel.edmx</DependentUpon>
-      <LastGenOutput>TestiTietokantaModel.cs</LastGenOutput>
+      <DependentUpon>TestitietokantaModel.edmx</DependentUpon>
+      <LastGenOutput>TestitietokantaModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -260,12 +258,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="Models\TestiTietokantaModel.edmx">
+    <EntityDeploy Include="Models\TestitietokantaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TestiTietokantaModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>TestitietokantaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\TestiTietokantaModel.edmx.diagram">
-      <DependentUpon>TestiTietokantaModel.edmx</DependentUpon>
+    <Content Include="Models\TestitietokantaModel.edmx.diagram">
+      <DependentUpon>TestitietokantaModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -314,8 +312,6 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Henkilo\Index.cshtml" />
-    <Content Include="Views\HenkilotiedotjaTunnit\HenkiloTunnit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,9 +346,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59154</DevelopmentServerPort>
+          <DevelopmentServerPort>51066</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59154/</IISUrl>
+          <IISUrl>http://localhost:51066/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
