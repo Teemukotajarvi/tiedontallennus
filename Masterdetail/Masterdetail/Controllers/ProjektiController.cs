@@ -35,8 +35,20 @@ namespace Masterdetail.Controllers
                                       orderby t.Pvm descending
                                       select t).ToList();
                 StringBuilder html = new StringBuilder();
-                html.Append("Hello World");
+                html.AppendLine("<td colspan=\"5\">"+
+                "<table class=\"table table-striped\">");
 
+                foreach (Tunnit tunti in Tunti )
+                {
+                    html.AppendLine("<tr><td>" +
+                        tunti.Pvm.Value.ToShortDateString() + "</td>" +
+                        "<td>"+tunti.Tunti_id+"</td>" +
+                        "<td>"+tunti.Projekti_id+"</td>" +
+                        "<td>"+tunti.Tunnit1+"</td></tr>");
+                }
+                               
+                 html.AppendLine("</table></td>");
+            
                 var jsonData = new { html = html.ToString() };
                 return Json(jsonData,JsonRequestBehavior.AllowGet);
             }
