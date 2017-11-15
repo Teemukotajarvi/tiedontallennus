@@ -2,7 +2,16 @@
 @{
     ViewBag.Title = "List Henkilöt";
 }
-
+@section scripts {
+    <script>
+        $(function () {
+            $(".DisplayHenkiloDataLink").click(function () {
+                var henkiloid = $(this).data("henkiloid");
+                alert("Klikattiin: " + henkiloid);
+            });
+         });
+    </script>  
+    }
 <h2>Index</h2>
 
 <table class="table table-striped">
@@ -19,7 +28,7 @@
         @foreach (Masterdetail.Models.Henkilot henk in Model)
         {
         <tr>
-            <td>@henk.Henkilo_id</td>
+            <td><a href="#" class="DisplayHenkiloDataLink" data-henkiloid="@henk.Henkilo_id"><span class="glyphicon glyphicon-plus-sign"></span></a>@henk.Henkilo_id</td>
             <td>@henk.Etunimi</td>
             <td>@henk.Sukunimi</td>
             <td>@henk.Osoite</td>
