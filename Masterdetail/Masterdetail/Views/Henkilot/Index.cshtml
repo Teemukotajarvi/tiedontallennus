@@ -9,8 +9,14 @@
                 var henkiloId = $(this).data("henkiloid");              
                 var url = "GetOrderData/" + henkiloId;
                 $.getJSON(url, null, function (data) {
-                    alert("kutsu onnistui, data = " + data.html);
+                    // alert("kutsu onnistui, data = " + data.html);
+
+                    var id = "#tuntiTiedotRow-" + henkiloId;
+                    $(id).html(data.html);
+                    $(id).css("display", "block");
                 });
+
+                return false;
             });
          });
     </script>  
@@ -36,6 +42,8 @@
             <td>@henk.Sukunimi</td>
             <td>@henk.Osoite</td>
             <td>@henk.Esimies</td>
+        </tr>
+        <tr id="tuntiTiedotRow-@henk.Henkilo_id" style="display: none;">            
         </tr>
         }
     </tbody>

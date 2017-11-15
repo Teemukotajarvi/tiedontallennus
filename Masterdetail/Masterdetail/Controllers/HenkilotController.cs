@@ -37,8 +37,21 @@ namespace Masterdetail.Controllers
                                        select t).ToList();
 
                 StringBuilder html = new StringBuilder();
-                html.Append("Hello World");
-               
+                html.AppendLine("<td colspan=\"5\">" +
+                  "<table class=\"table table-striped\">");
+
+                foreach (Tunnit tunnit in Tunti)
+                {
+                    html.AppendLine("<tr><td>" +
+                        tunnit.Pvm.Value.ToShortDateString() + "</td>" +
+                        "<td>"+tunnit.Henkilo_id+"</td>"+
+                        "<td>"+tunnit.Tunti_id+"</td>"+
+                        "<td>"+tunnit.Projekti_id+"</td>"+
+                        "<td>"+tunnit.Tunnit1+"</td></tr>");
+                     
+                }                 
+                html.AppendLine("</table></td>");
+                                      
                 var jsonData = new { html = html.ToString() };
                 return Json(jsonData, JsonRequestBehavior.AllowGet);
             }
