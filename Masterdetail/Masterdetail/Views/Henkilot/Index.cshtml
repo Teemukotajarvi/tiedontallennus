@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Masterdetail.Models.Henkilot>
+@{
+    ViewBag.Title = "List Henkilöt";
+}
+
+<h2>Index</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Henkilo_id </th>
+            <th>Etunimi</th>
+            <th>Sukunimi</th>
+            <th>Osoite</th>
+            <th>Esimies</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Masterdetail.Models.Henkilot henk in Model)
+        {
+        <tr>
+            <td>@henk.Henkilo_id</td>
+            <td>@henk.Etunimi</td>
+            <td>@henk.Sukunimi</td>
+            <td>@henk.Osoite</td>
+            <td>@henk.Esimies</td>
+        </tr>
+        }
+    </tbody>
+</table>
