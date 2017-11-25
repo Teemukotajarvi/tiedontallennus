@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Masterdetail.Models.Projektit>
+@{
+    ViewBag.Title = "Projekti";
+}
+@section scripts{
+    <script>
+        $(function () {
+            $(".displayProjektDataLink").click(function () {
+                var projektiId = $(this).data("projektiid");
+                var url = "GetHourData/" + projektiId;
+                $.getJSON(url, null, function (data) {
+                    //alert("kutsu onnistui, data = " + data.html);
+
+                    var id = "#projektiTiedotRow-" + projektiId;
+                    $(id).html(data.html);
+                    $(id).css("display", "block");
+                });
+                return false;
+            });
+        });
+    </script>  
+    }
+<h2>List Customer</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Projekti_id </th>
+            <th>Nimi</th>       
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Masterdetail.Models.Projektit proj in Model)
+        {
+        <tr>
+            <td><a href="#" class="displayProjektDataLink" data-projektiid="@proj.Projekti_id"><span class="glyphicon glyphicon-plus-sign"></span></a>@proj.Projekti_id</td>
+            <td>@proj.Nimi</td>
+        </tr>
+        <tr id="projektiTiedotRow-@proj.Projekti_id" style="display: none;">
+            
+         </tr>
+        }
+    </tbody>
+</table>

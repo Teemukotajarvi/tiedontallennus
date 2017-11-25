@@ -1,0 +1,2 @@
+http://masterdetailpalautettava3.azurewebsites.net/
+https://github.com/Teemukotajarvi/tiedontallennus/tree/master/Masterdetail/Masterdetail.

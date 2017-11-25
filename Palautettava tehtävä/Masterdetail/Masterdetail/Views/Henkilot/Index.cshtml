@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Masterdetail.Models.Henkilot>
+@{
+    ViewBag.Title = "List Henkilöt";
+}
+@section scripts {
+    <script>
+        $(function () {
+            $(".displayHenkiloDataLink").click(function () {
+                var henkiloId = $(this).data("henkiloid");              
+                var url = "GetOrderData/" + henkiloId;
+                $.getJSON(url, null, function (data) {
+                    // alert("kutsu onnistui, data = " + data.html);
+
+                    var id = "#tuntiTiedotRow-" + henkiloId;
+                    $(id).html(data.html);
+                    $(id).css("display", "block");
+                });
+
+                return false;
+            });
+         });
+    </script>  
+    }
+<h2>Index</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Henkilo_id </th>
+            <th>Etunimi</th>
+            <th>Sukunimi</th>
+            <th>Osoite</th>
+            <th>Esimies</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Masterdetail.Models.Henkilot henk in Model)
+        {
+        <tr>
+            <td><a href="#" class="displayHenkiloDataLink" data-henkiloid="@henk.Henkilo_id"><span class="glyphicon glyphicon-plus-sign"></span></a>@henk.Henkilo_id</td>
+            <td>@henk.Etunimi</td>
+            <td>@henk.Sukunimi</td>
+            <td>@henk.Osoite</td>
+            <td>@henk.Esimies</td>
+        </tr>
+        <tr id="tuntiTiedotRow-@henk.Henkilo_id" style="display: none;">            
+        </tr>
+        }
+    </tbody>
+</table>
